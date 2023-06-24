@@ -1,0 +1,168 @@
+Server Creation
+------------------
+
+-1- create package.json file - npm init
+-2- install express framework - npm i express(local istallation)
+
+
+Server side technology - node - resolves multiple requests at a time
+
+api(to connect client and server)
+---
+http request
+
+it has two portions,
+header                  body
+secret data           data-json/xml
+
+types of http requests
+-----
+GET     -  read
+POST    -  create
+PUT     -  complete updation
+PATCH   -  partial updation
+DELETE  -  remove
+
+
+Server response status code 
+-----------------------------
+
+100 - information
+200 - success
+300 - redirection
+400 - client error
+500 - server side error
+
+...........................................................................................................
+...........................................................................................................
+
+server creation steps
+-----------------------
+
+1- import express
+2- create app using express
+3- port number setting(set port number) - 3000
+4- resolve http requests
+...........................................................................................................
+...........................................................................................................
+
+Nodemon 
+----------
+if we run server using node, recomplilation doesnt work
+so we use another server ,that is Nodemon
+
+to install nodemon
+
+- npm i -g nodemon
+
+
+express.json()             - to convert all requests datas from json to js
+.json(data)                -convert(js to json) and send the data as response
+.status(status code)       -to change the response status code as statusCode
+
+...........................................................................................................
+...........................................................................................................
+
+TOKEN in Server
+----------------
+
+JWT TOKEN - json Web Token - normally used for user verification
+install   - npm i jsonwebtoken
+
+library - jsonwebtoken
+sign()  - method used to generate jwt token
+verify()- used to verify json web token
+
+token verification
+-------------------
+
+middlewares 
+-----------
+token verification can be done using middlewares
+middlewares have the capacity to control server requests
+
+-middlewares is a function with three arguments  - request,response,next
+-two types of middlewares
+
+    1. Application Specific middleware 
+           - work before all requests in server
+    2. Router Specific  middleware
+           - can apply to Specific requests in server
+
+how to solve runtime errors in json
+------------------------------------
+
+try except
+
+try - work if error is there or not
+   errors causing code
+
+catch - works only if there is error
+   error solve
+
+
+Mongo  DB  - database
+------------
+
+install mongodb server
+
+shell commands
+--------------
+
+CRUD - Create Read Update DELETE
+
+-show dbs                                  - To see databases
+-use (database_name)                       - to open a database
+-show collections                          - to see collections inside database
+-db.(collection_name).find()               -to read all data in collection
+-db.(collection_name).findOne({acno:1000}) -to read single data
+
+-db.(collection_name).insertOne({"acno":1001,"name":"amal",....})
+                                           -create new data
+
+-db.(collection_name).find({balance{gt:4000}}) 
+                                           -find using a condition
+
+-db.(collection_name).deleteOne({"uanme":"anu"})
+                                           -delete count       used to delete
+
+-db.(collection_name).updateOne({uname:anu},{$set:{uname:anu v}})
+                                           -update data
+
+
+
+register               -insertOne
+login                  -findOne
+deposit                -updateOne
+withdraw               -updateOne
+transaction history    -findOne
+delete                 -deleteOne
+
+
+Server database Integration
+----------------------------
+database -27017
+server  -3000
+
+mongoose  -used to server mdb Integration
+
+install  - npm i mongoose
+
+steps for Integration
+----------------------
+
+1.import mongoose
+2.state a connection string to integrate
+3.define a model for our collection 
+
+
+FrontEnd Server Integration
+---------------------------
+
+CORS - cross origin resource sharing - library used to front end server Integration
+(4200-3000)
+
+steps for Integration
+---------------------
+1 - import cors
+2 - connection string
